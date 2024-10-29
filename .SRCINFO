@@ -1,0 +1,19 @@
+pkgbase = mygo-git
+	pkgdesc = My BetaGo implementation in PyTorch!
+	pkgver = 0.1.0.r95.10e87b8
+	pkgrel = 1
+	url = https://github.com/jaxvanyang/mygo
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = git-lfs
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-wheel
+	makedepends = python-hatchling
+	depends = python-pytorch
+	depends = python-numpy
+	provides = mygo
+	conflicts = mygo
+
+pkgname = mygo-git

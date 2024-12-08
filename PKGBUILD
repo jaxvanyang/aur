@@ -4,30 +4,23 @@ pkgname=mygo-git
 _pkgname="${pkgname%-git}"
 pkgver=0.1.0.r144.7ef2505
 pkgrel=1
-pkgdesc="My BetaGo implementation in PyTorch!"
+pkgdesc="Experimental Go bot implemented in PyTorch"
 arch=('any')
 url="https://github.com/jaxvanyang/mygo"
 license=('MIT')
 depends=('python-pytorch' 'python-numpy')
 makedepends=(
 	'git'
-	'git-lfs'
 	'python-build'
 	'python-installer'
 	'python-wheel'
 	'python-pdm-backend'
 )
 checkdepends=('python-pytest')
+source=("$_pkgname::git+https://github.com/jaxvanyang/mygo.git")
+sha256sums=('SKIP')
 provides=("$_pkgname")
 conflicts=("$_pkgname")
-
-prepare() {
-	rm -rf "$_pkgname" && git clone https://github.com/jaxvanyang/mygo.git
-	cd "$_pkgname"
-	git lfs install --local
-	git lfs fetch
-	git lfs checkout
-}
 
 pkgver() {
 	cd "$_pkgname"

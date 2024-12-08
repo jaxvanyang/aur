@@ -1,5 +1,5 @@
 pkgbase = mygo-git
-	pkgdesc = My BetaGo implementation in PyTorch!
+	pkgdesc = Experimental Go bot implemented in PyTorch
 	pkgver = 0.1.0.r144.7ef2505
 	pkgrel = 1
 	url = https://github.com/jaxvanyang/mygo
@@ -7,7 +7,6 @@ pkgbase = mygo-git
 	license = MIT
 	checkdepends = python-pytest
 	makedepends = git
-	makedepends = git-lfs
 	makedepends = python-build
 	makedepends = python-installer
 	makedepends = python-wheel
@@ -16,5 +15,7 @@ pkgbase = mygo-git
 	depends = python-numpy
 	provides = mygo
 	conflicts = mygo
+	source = mygo::git+https://github.com/jaxvanyang/mygo.git
+	sha256sums = SKIP
 
 pkgname = mygo-git

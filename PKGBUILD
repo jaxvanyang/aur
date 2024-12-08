@@ -2,7 +2,7 @@
 
 pkgname=mygo-git
 _pkgname="${pkgname%-git}"
-pkgver=0.1.0.r95.10e87b8
+pkgver=0.1.0.r144.7ef2505
 pkgrel=1
 pkgdesc="My BetaGo implementation in PyTorch!"
 arch=('any')
@@ -15,8 +15,9 @@ makedepends=(
 	'python-build'
 	'python-installer'
 	'python-wheel'
-	'python-hatchling'
+	'python-pdm-backend'
 )
+checkdepends=('python-pytest')
 provides=("$_pkgname")
 conflicts=("$_pkgname")
 
@@ -40,7 +41,8 @@ build() {
 
 check() {
 	cd "$_pkgname"
-	PYTHONPATH="$PWD/src" python -m mygo.cli --version
+	export CI=true
+	pytest tests
 }
 
 package() {

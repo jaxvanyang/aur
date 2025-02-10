@@ -1,0 +1,15 @@
+pkgbase = jax-pl
+	pkgdesc = My programming language collection
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/jaxvanyang/aur/tree/jax-pl
+	arch = any
+	license = Unlicense
+	depends = rustup
+	depends = rust-analyzer
+	depends = python
+	depends = bash-language-server
+	depends = shellcheck
+	depends = yaml-language-server
+
+pkgname = jax-pl
